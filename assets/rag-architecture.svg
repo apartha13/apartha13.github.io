@@ -1,0 +1,68 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">RAG Pipeline Architecture</title>
+  <desc id="desc">Diagram showing ingestion, retrieval, reranking, context assembly, and answer generation stages.</desc>
+
+  <rect width="1400" height="760" rx="24" fill="#FFFDF8"/>
+  <rect x="40" y="40" width="1320" height="680" rx="20" fill="#FBF8EF" stroke="#DDD3BF" stroke-width="2"/>
+
+  <text x="70" y="95" font-family="Sora, Arial, sans-serif" font-size="34" font-weight="700" fill="#1B2230">RAG and Context Engineering Pipeline</text>
+  <text x="70" y="132" font-family="Space Grotesk, Arial, sans-serif" font-size="22" fill="#434F63">RapidFire AI OSS docs → retrieval + reranking → constrained context generation</text>
+
+  <rect x="90" y="190" width="250" height="120" rx="16" fill="#E7F7F5" stroke="#0F8C84"/>
+  <text x="112" y="236" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#0B6E68">RST Docs</text>
+  <text x="112" y="268" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">RapidFire corpus</text>
+
+  <rect x="390" y="190" width="290" height="120" rx="16" fill="#FFF5EA" stroke="#DD6F2A"/>
+  <text x="414" y="236" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#A94D17">Line-aware Chunker</text>
+  <text x="414" y="268" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">512 tokens, 96 overlap</text>
+
+  <rect x="730" y="190" width="250" height="120" rx="16" fill="#E9EEF9" stroke="#4A69A8"/>
+  <text x="754" y="236" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#314B7A">Embedding</text>
+  <text x="754" y="268" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">bge-large-en-v1.5</text>
+
+  <rect x="1030" y="190" width="250" height="120" rx="16" fill="#F2F0FA" stroke="#7352A3"/>
+  <text x="1054" y="236" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#5B3A8F">FAISS Index</text>
+  <text x="1054" y="268" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">Similarity search k=25</text>
+
+  <rect x="140" y="430" width="260" height="120" rx="16" fill="#E7F7F5" stroke="#0F8C84"/>
+  <text x="164" y="476" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#0B6E68">User Question</text>
+  <text x="164" y="508" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">Single-turn Q&amp;A</text>
+
+  <rect x="450" y="430" width="290" height="120" rx="16" fill="#FFF5EA" stroke="#DD6F2A"/>
+  <text x="474" y="476" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#A94D17">Cross-Encoder</text>
+  <text x="474" y="508" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">bge-reranker-large, top_n=1</text>
+
+  <rect x="790" y="430" width="260" height="120" rx="16" fill="#E9EEF9" stroke="#4A69A8"/>
+  <text x="814" y="476" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#314B7A">Context Builder</text>
+  <text x="814" y="508" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">≤ 2,000 token budget</text>
+
+  <rect x="1100" y="430" width="220" height="120" rx="16" fill="#F2F0FA" stroke="#7352A3"/>
+  <text x="1124" y="476" font-family="Sora, Arial, sans-serif" font-size="24" font-weight="600" fill="#5B3A8F">LLM Output</text>
+  <text x="1124" y="508" font-family="Space Grotesk, Arial, sans-serif" font-size="20" fill="#1B2230">Answer + sources</text>
+
+  <line x1="340" y1="250" x2="390" y2="250" stroke="#1B2230" stroke-width="3"/>
+  <polygon points="390,250 375,242 375,258" fill="#1B2230"/>
+
+  <line x1="680" y1="250" x2="730" y2="250" stroke="#1B2230" stroke-width="3"/>
+  <polygon points="730,250 715,242 715,258" fill="#1B2230"/>
+
+  <line x1="980" y1="250" x2="1030" y2="250" stroke="#1B2230" stroke-width="3"/>
+  <polygon points="1030,250 1015,242 1015,258" fill="#1B2230"/>
+
+  <line x1="400" y1="490" x2="450" y2="490" stroke="#1B2230" stroke-width="3"/>
+  <polygon points="450,490 435,482 435,498" fill="#1B2230"/>
+
+  <line x1="740" y1="490" x2="790" y2="490" stroke="#1B2230" stroke-width="3"/>
+  <polygon points="790,490 775,482 775,498" fill="#1B2230"/>
+
+  <line x1="1050" y1="490" x2="1100" y2="490" stroke="#1B2230" stroke-width="3"/>
+  <polygon points="1100,490 1085,482 1085,498" fill="#1B2230"/>
+
+  <path d="M1160 310C1160 360 900 360 900 430" stroke="#5B3A8F" stroke-width="3" stroke-dasharray="8 8"/>
+  <polygon points="900,430 892,415 908,415" fill="#5B3A8F"/>
+  <text x="935" y="382" font-family="Space Grotesk, Arial, sans-serif" font-size="18" fill="#5B3A8F">retrieve candidates</text>
+
+  <path d="M220 430C220 360 1120 360 1120 310" stroke="#0B6E68" stroke-width="3" stroke-dasharray="8 8"/>
+  <polygon points="1120,310 1112,325 1128,325" fill="#0B6E68"/>
+  <text x="430" y="352" font-family="Space Grotesk, Arial, sans-serif" font-size="18" fill="#0B6E68">question embedding + nearest-neighbor retrieval</text>
+</svg>

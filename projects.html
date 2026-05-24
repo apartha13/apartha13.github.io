@@ -19,11 +19,10 @@
 
     <header class="site-header">
       <a class="logo" href="index.html">ajaypartha</a>
-      <nav class="main-nav" aria-label="Project categories">
-        <a href="#all-projects">All</a>
-        <a href="#web">Web</a>
-        <a href="#data">Data</a>
-        <a href="#ai">AI</a>
+      <nav class="main-nav" aria-label="Project page navigation">
+        <a href="#rag-context-engineering">RAG Project</a>
+        <a href="#technical-architecture">Architecture</a>
+        <a href="#demo">Demo</a>
       </nav>
       <a class="button ghost" href="index.html">Home</a>
     </header>
@@ -31,73 +30,68 @@
     <main>
       <section class="hero reveal">
         <p class="eyebrow">Project Page</p>
-        <h1>Case studies from shipping, experimenting, and learning in public.</h1>
+        <h1>Projects case studies, built from real coursework and team engineering work.</h1>
         <p class="lead">
-          These projects show how I think from problem framing to implementation. Use filters to browse by
-          category.
+          This first case study covers my RAG and context
+          engineering pipeline for CSE/DSC 234.
         </p>
       </section>
 
-      <section id="all-projects" class="section reveal">
-        <div class="filters" aria-label="Project filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="web" id="web">Web</button>
-          <button class="filter-btn" data-filter="data" id="data">Data</button>
-          <button class="filter-btn" data-filter="ai" id="ai">AI</button>
+      <section id="rag-context-engineering" class="section reveal">
+        <article class="card case-study">
+          <p class="tag">AI</p>
+          <h2>Project 1: RAG and Context Engineering</h2>
+          <div class="story-flow">
+            <p>
+              This project started with a practical constraint: answer documentation questions accurately
+              without exceeding a 2,000-token context window, and still provide traceable source lines.
+            </p>
+            <p>
+              To solve that, my team built a single-turn RAG pipeline that retrieves candidate chunks,
+              reranks them, and generates grounded answers over the RapidFire AI OSS docs.
+            </p>
+            <p id="technical-architecture">
+              Under the hood, the system uses RapidFire AI and LangChain abstractions with a custom
+              line-aware token chunker, FAISS similarity retrieval (k=25), BAAI/bge-large-en-v1.5
+              embeddings, and BAAI/bge-reranker-large with top_n=1 before final generation.
+            </p>
+            <p>
+              The main learning was how strongly context quality affects output quality: reducing noisy
+              context improved precision and made answers more consistent in final experiments.
+            </p>
+            <p id="demo">
+              If you want a quick walkthrough, start with the architecture diagram below for the full
+              request-to-answer flow, then open the report for deeper methodology and result details.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="architecture" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Architecture</p>
+          <h2>RAG Pipeline Diagram</h2>
         </div>
+        <figure class="card architecture-figure">
+          <img
+            src="assets/rag-architecture.svg"
+            alt="RAG pipeline architecture showing document loading, chunking, embedding, FAISS retrieval, reranking, context assembly, and LLM answer generation"
+          />
+          <figcaption>End-to-end architecture for the RAG and context engineering project.</figcaption>
+        </figure>
+      </section>
 
-        <div class="project-grid">
-          <article class="card project-card" id="focusflow" data-category="web">
-            <p class="tag">Web</p>
-            <h3>FocusFlow Task Manager</h3>
-            <p>
-              Multi-user planning board with drag-and-drop tasks, progress metrics, and weekly sprint
-              summaries.
-            </p>
-            <p><strong>Stack:</strong> React, TypeScript, Firebase</p>
-          </article>
-
-          <article class="card project-card" id="citypulse" data-category="data">
-            <p class="tag">Data</p>
-            <h3>CityPulse Analytics</h3>
-            <p>
-              Dashboard that compares transportation, safety, and housing indicators across cities using
-              public datasets.
-            </p>
-            <p><strong>Stack:</strong> Python, D3, FastAPI</p>
-          </article>
-
-          <article class="card project-card" id="studybuddy" data-category="ai">
-            <p class="tag">AI</p>
-            <h3>StudyBuddy Assistant</h3>
-            <p>
-              AI-powered study helper that creates quiz cards, summarizes class notes, and tracks weak
-              concepts.
-            </p>
-            <p><strong>Stack:</strong> Next.js, OpenAI API, PostgreSQL</p>
-          </article>
-
-          <article class="card project-card" data-category="web">
-            <p class="tag">Web</p>
-            <h3>Portfolio Labs</h3>
-            <p>Micro-interaction playground to test motion, typography systems, and layout experiments.</p>
-            <p><strong>Stack:</strong> HTML, CSS, GSAP</p>
-          </article>
-
-          <article class="card project-card" data-category="data">
-            <p class="tag">Data</p>
-            <h3>Habit Heatmap</h3>
-            <p>Personal habit tracker that transforms daily entries into a yearly trend visualization.</p>
-            <p><strong>Stack:</strong> Python, Pandas, Plotly</p>
-          </article>
-
-          <article class="card project-card" data-category="ai">
-            <p class="tag">AI</p>
-            <h3>Prompt Pattern Library</h3>
-            <p>Curated prompt toolkit for developers with benchmarking notes and reusable templates.</p>
-            <p><strong>Stack:</strong> Node.js, Express, SQLite</p>
-          </article>
+      <section id="report" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">More Details</p>
+          <h2>Full Report</h2>
         </div>
+        <article class="card case-study">
+          <p>
+            For complete experimental setup, config tables, and analysis, use the full project report.
+          </p>
+          <a class="button" href="report-rag.pdf">Read Full Project Report</a>
+        </article>
       </section>
     </main>
 
