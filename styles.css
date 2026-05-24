@@ -316,13 +316,15 @@ h2 {
 .prototype-gallery {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .prototype-image-card {
   margin: 0;
-  height: 260px;
+  height: 170px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -419,7 +421,12 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .prototype-gallery {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
   .prototype-image-card {
-    height: 210px;
+    height: 150px;
   }
 }
