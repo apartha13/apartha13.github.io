@@ -322,6 +322,7 @@ h2 {
 
 .prototype-image-card {
   margin: 0;
+  height: 260px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -334,7 +335,6 @@ h2 {
   height: 100%;
   display: block;
   object-fit: cover;
-  aspect-ratio: 4 / 3;
 }
 
 .award-title {
@@ -417,5 +417,9 @@ h2 {
 
   .award-grid {
     grid-template-columns: 1fr;
+  }
+
+  .prototype-image-card {
+    height: 210px;
   }
 }
