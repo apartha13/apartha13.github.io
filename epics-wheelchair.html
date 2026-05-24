@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajay Partha | Mayo Clinic Radiology Wheelchair</title>
+    <meta
+      name="description"
+      content="EPICS medical device design project for Mayo Clinic Radiology by Ajay Partha."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-a"></div>
+    <div class="background-orb orb-b"></div>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">ajaypartha</a>
+      <nav class="main-nav" aria-label="Project page navigation">
+        <a href="#summary">Summary</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#award">Award</a>
+      </nav>
+      <a class="button ghost" href="index.html#projects">Back to Projects</a>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <p class="eyebrow">Project 3</p>
+        <h1>Mayo Clinic Radiology Wheelchair Project</h1>
+        <p class="lead">
+          A human-centered medical device design collaboration with Mayo Clinic Phoenix Radiology to reduce
+          chest X-ray fall risk while protecting image quality.
+        </p>
+      </section>
+
+      <section id="summary" class="section reveal">
+          <article class="card case-study">
+            <p class="tag">EPICS</p>
+          <div class="story-flow">
+            <p>
+              The project started with a clear clinical problem: some patients coming in for chest X-rays
+              were weak, dizzy, post-surgery, medicated, or reliant on assistive devices, yet they were
+              often asked to stand for imaging.
+            </p>
+            <p>
+              That created a fall risk, but the safer alternative of imaging patients while lying down could
+              reduce diagnostic quality. Our team worked with Mayo Clinic stakeholders to translate that
+              workflow pain point into engineering requirements for a safer seating-based imaging solution.
+            </p>
+            <p>
+              The result was a modified Mayo-approved wheelchair concept designed to stay familiar to staff,
+              fit hospital constraints, and preserve upright patient support without creating visible X-ray
+              artifacts.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="prototype" class="section reveal">
+        <article class="card case-study">
+          <div class="story-flow">
+            <p>
+              We explored concepts such as radiolucent materials, rotating armrests, reclining backs, and
+              joint designs that could move obstructive components out of the imaging field.
+            </p>
+            <p>
+              Over time, the design converged toward a reclining-back wheelchair with arms that could rotate
+              farther away from the X-ray field, while still remaining transportable, disinfectant-resistant,
+              and practical for one technologist to use.
+            </p>
+            <p>
+              The prototype and documentation process included stakeholder interviews, needs assessment,
+              CAD modeling, prototyping, validation planning, and testing ideas for transportability,
+              cleaning resistance, load safety, and image visibility.
+            </p>
+            <p>
+              A major insight from the project was that even small wheelchair artifacts can mimic clinical
+              findings on scans, so every design choice had to balance patient safety with image quality.
+            </p>
+          </div>
+
+          <div class="prototype-gallery">
+            <figure class="prototype-image-card">
+              <img
+                src="wheelchair.png"
+                alt="Prototype wheelchair concept image from the EPICS Mayo Clinic project"
+              />
+            </figure>
+            <figure class="prototype-image-card">
+              <img
+                src="flug.png"
+                alt="Development image for the EPICS Mayo Clinic project"
+              />
+            </figure>
+          </div>
+        </article>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Technical Architecture</p>
+          <h2>Design and Validation Focus</h2>
+        </div>
+        <figure class="card architecture-figure">
+          <div class="story-flow">
+            <p>
+              The build centered on an adapted hospital wheelchair rather than a completely new chair so it
+              could remain familiar, transportable, and compatible with Mayo’s purchasing and approval
+              constraints.
+            </p>
+            <p>
+              We documented design iterations, prototype concepts, and validation plans for reclining
+              mechanics, arm movement, radiolucency, disinfectant resistance, user effort, and fall-risk
+              reduction.
+            </p>
+            <p>
+              Testing planning included sample X-rays, load and impact testing, transport checks with and
+              without an occupant, and repeated cleaning with hospital-grade disinfectants.
+            </p>
+          </div>
+        </figure>
+      </section>
+
+      <section id="award" class="section reveal">
+        <article class="card award-spotlight">
+          <p class="tag award-tag">Award Spotlight</p>
+          <div class="award-grid">
+            <div class="story-flow">
+              <h2 class="award-title">Future Forward Award</h2>
+              <p>
+                The team delivered the final prototype to Mayo Clinic in May 2024 and received the Future
+                Forward Award from EPICS for successfully completing the project.
+              </p>
+              <p>
+                We also prepared pitch materials, placed first in the EPICS Elite Pitch Competition with
+                $2,500 in funding, and later placed second in the Ashton Family Venture Challenge with
+                $1,500.
+              </p>
+              <p>
+                For a quick walkthrough, think of the project as a translation of clinical workflow pain
+                points into engineering requirements, then into CAD, prototype, and validation planning.
+              </p>
+            </div>
+
+            <figure class="project-image-placeholder">
+              <img
+                class="award-photo"
+                src="futureforward.JPEG"
+                alt="Future Forward Award presentation or project photo for the Mayo Clinic radiology wheelchair project"
+              />
+            </figure>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Ajay Partha</p>
+      <a href="index.html#projects">View Other Projects</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
