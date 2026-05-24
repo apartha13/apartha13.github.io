@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ajay Partha | Projects</title>
-    <meta name="description" content="Project case studies and experiments by Ajay Partha." />
+    <title>Ajay Partha | RAG and Context Engineering</title>
+    <meta
+      name="description"
+      content="Project case study for RAG and Context Engineering by Ajay Partha."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,27 +23,27 @@
     <header class="site-header">
       <a class="logo" href="index.html">ajaypartha</a>
       <nav class="main-nav" aria-label="Project page navigation">
-        <a href="#rag-context-engineering">RAG Project</a>
-        <a href="#technical-architecture">Architecture</a>
-        <a href="#demo">Demo</a>
+        <a href="index.html#projects">All Projects</a>
+        <a href="honors-thesis.html">Honors Thesis</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#report">Report</a>
       </nav>
-      <a class="button ghost" href="index.html">Home</a>
+      <a class="button ghost" href="index.html#projects">Back to Projects</a>
     </header>
 
     <main>
       <section class="hero reveal">
-        <p class="eyebrow">Project Page</p>
-        <h1>Projects case studies, built from real coursework and team engineering work.</h1>
+        <p class="eyebrow">Project 1</p>
+        <h1>RAG and Context Engineering</h1>
         <p class="lead">
-          This first case study covers my RAG and context
-          engineering pipeline for CSE/DSC 234.
+          A retrieval-augmented generation system built over RapidFire AI OSS docs under a strict
+          2,000-token context budget.
         </p>
       </section>
 
-      <section id="rag-context-engineering" class="section reveal">
+      <section class="section reveal">
         <article class="card case-study">
           <p class="tag">AI</p>
-          <h2>Project 1: RAG and Context Engineering</h2>
           <div class="story-flow">
             <p>
               This project started with a practical constraint: answer documentation questions accurately
@@ -50,7 +53,7 @@
               To solve that, my team built a single-turn RAG pipeline that retrieves candidate chunks,
               reranks them, and generates grounded answers over the RapidFire AI OSS docs.
             </p>
-            <p id="technical-architecture">
+            <p>
               Under the hood, the system uses RapidFire AI and LangChain abstractions with a custom
               line-aware token chunker, FAISS similarity retrieval (k=25), BAAI/bge-large-en-v1.5
               embeddings, and BAAI/bge-reranker-large with top_n=1 before final generation.
@@ -59,9 +62,9 @@
               The main learning was how strongly context quality affects output quality: reducing noisy
               context improved precision and made answers more consistent in final experiments.
             </p>
-            <p id="demo">
-              If you want a quick walkthrough, start with the architecture diagram below for the full
-              request-to-answer flow, then open the report for deeper methodology and result details.
+            <p>
+              For a quick walkthrough, use the architecture diagram below for the full request-to-answer
+              flow, then open the report for deeper methodology and result details.
             </p>
           </div>
         </article>
@@ -82,15 +85,11 @@
       </section>
 
       <section id="report" class="section reveal">
-        <div class="section-header">
-          <p class="eyebrow">More Details</p>
-          <h2>Full Report</h2>
-        </div>
         <article class="card case-study">
-          <p>
-            For complete experimental setup, config tables, and analysis, use the full project report.
-          </p>
-          <a class="button" href="report-rag.pdf">Read Full Project Report</a>
+          <p>For complete experimental setup, config tables, and analysis, use the full project report.</p>
+          <a class="button" href="report-rag.pdf" target="_blank" rel="noopener noreferrer"
+            >Read RAG Report</a
+          >
         </article>
       </section>
     </main>
