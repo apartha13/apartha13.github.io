@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajay Partha | Projects</title>
+    <meta name="description" content="Project case studies and experiments by Ajay Partha." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-a"></div>
+    <div class="background-orb orb-b"></div>
+
+    <header class="site-header">
+      <a class="logo" href="index.html">ajaypartha</a>
+      <nav class="main-nav" aria-label="Project categories">
+        <a href="#all-projects">All</a>
+        <a href="#web">Web</a>
+        <a href="#data">Data</a>
+        <a href="#ai">AI</a>
+      </nav>
+      <a class="button ghost" href="index.html">Home</a>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <p class="eyebrow">Project Page</p>
+        <h1>Case studies from shipping, experimenting, and learning in public.</h1>
+        <p class="lead">
+          These projects show how I think from problem framing to implementation. Use filters to browse by
+          category.
+        </p>
+      </section>
+
+      <section id="all-projects" class="section reveal">
+        <div class="filters" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web" id="web">Web</button>
+          <button class="filter-btn" data-filter="data" id="data">Data</button>
+          <button class="filter-btn" data-filter="ai" id="ai">AI</button>
+        </div>
+
+        <div class="project-grid">
+          <article class="card project-card" id="focusflow" data-category="web">
+            <p class="tag">Web</p>
+            <h3>FocusFlow Task Manager</h3>
+            <p>
+              Multi-user planning board with drag-and-drop tasks, progress metrics, and weekly sprint
+              summaries.
+            </p>
+            <p><strong>Stack:</strong> React, TypeScript, Firebase</p>
+          </article>
+
+          <article class="card project-card" id="citypulse" data-category="data">
+            <p class="tag">Data</p>
+            <h3>CityPulse Analytics</h3>
+            <p>
+              Dashboard that compares transportation, safety, and housing indicators across cities using
+              public datasets.
+            </p>
+            <p><strong>Stack:</strong> Python, D3, FastAPI</p>
+          </article>
+
+          <article class="card project-card" id="studybuddy" data-category="ai">
+            <p class="tag">AI</p>
+            <h3>StudyBuddy Assistant</h3>
+            <p>
+              AI-powered study helper that creates quiz cards, summarizes class notes, and tracks weak
+              concepts.
+            </p>
+            <p><strong>Stack:</strong> Next.js, OpenAI API, PostgreSQL</p>
+          </article>
+
+          <article class="card project-card" data-category="web">
+            <p class="tag">Web</p>
+            <h3>Portfolio Labs</h3>
+            <p>Micro-interaction playground to test motion, typography systems, and layout experiments.</p>
+            <p><strong>Stack:</strong> HTML, CSS, GSAP</p>
+          </article>
+
+          <article class="card project-card" data-category="data">
+            <p class="tag">Data</p>
+            <h3>Habit Heatmap</h3>
+            <p>Personal habit tracker that transforms daily entries into a yearly trend visualization.</p>
+            <p><strong>Stack:</strong> Python, Pandas, Plotly</p>
+          </article>
+
+          <article class="card project-card" data-category="ai">
+            <p class="tag">AI</p>
+            <h3>Prompt Pattern Library</h3>
+            <p>Curated prompt toolkit for developers with benchmarking notes and reusable templates.</p>
+            <p><strong>Stack:</strong> Node.js, Express, SQLite</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Ajay Partha</p>
+      <a href="index.html#contact">Contact</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
