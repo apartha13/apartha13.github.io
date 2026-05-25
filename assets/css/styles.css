@@ -491,6 +491,36 @@ h2 {
   font-size: 0.94rem;
 }
 
+.thesis-evidence-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.thesis-figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  overflow: hidden;
+}
+
+.thesis-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.thesis-figure figcaption {
+  margin: 0;
+  padding: 0.65rem 0.75rem 0.75rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
 .stack-pill-list {
   margin-top: 1rem;
   display: flex;
@@ -778,6 +808,10 @@ h2 {
   }
 
   .about-story-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .thesis-evidence-grid {
     grid-template-columns: 1fr;
   }
 

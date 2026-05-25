@@ -23,58 +23,84 @@
     <header class="site-header">
       <a class="logo" href="../index.html">ajaypartha</a>
       <nav class="main-nav" aria-label="Project page navigation">
-        <a href="about.html">About</a>
         <a href="../index.html#projects">All Projects</a>
-        <a href="honors-thesis.html">Honors Thesis</a>
+        <a href="#problem">Problem</a>
+        <a href="#approach">Approach</a>
         <a href="#architecture">Architecture</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#takeaways">Takeaways</a>
         <a href="#report">Report</a>
       </nav>
-      <a class="button ghost" href="../index.html#projects">Back to Projects</a>
+      <a class="button ghost" href="../index.html">Back to Home</a>
     </header>
 
     <main>
       <section class="hero reveal">
-        <p class="eyebrow">Project 1</p>
+        <p class="eyebrow">Case Study</p>
         <h1>RAG and Context Engineering</h1>
         <p class="lead">
-          A retrieval-augmented generation system built over RapidFire AI OSS docs under a strict
-          2,000-token context budget.
+          A retrieval-augmented generation system built over RapidFire AI OSS documentation under a strict
+          2,000-token context budget, optimized for source-grounded and reproducible answers.
         </p>
       </section>
 
-      <section class="section reveal">
+      <section id="problem" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Problem</p>
+          <h2>High-answer quality with limited context</h2>
+        </div>
         <article class="card case-study">
           <p class="tag">AI</p>
           <div class="story-flow">
             <p>
               This project started with a practical constraint: answer documentation questions accurately
-              without exceeding a 2,000-token context window, and still provide traceable source lines.
+              without exceeding a 2,000-token context window while still returning traceable source lines.
             </p>
             <p>
-              To solve that, my team built a single-turn RAG pipeline that retrieves candidate chunks,
-              reranks them, and generates grounded answers over the RapidFire AI OSS docs.
+              In practice, naive retrieval often returns partially relevant chunks that consume budget but
+              do not improve answer quality. The real challenge became context selection, not just retrieval.
             </p>
             <p>
-              Under the hood, the system uses RapidFire AI and LangChain abstractions with a custom
-              line-aware token chunker, FAISS similarity retrieval (k=25), BAAI/bge-large-en-v1.5
-              embeddings, and BAAI/bge-reranker-large with top_n=1 before final generation.
-            </p>
-            <p>
-              The main learning was how strongly context quality affects output quality: reducing noisy
-              context improved precision and made answers more consistent in final experiments.
-            </p>
-            <p>
-              For a quick walkthrough, use the architecture diagram below for the full request-to-answer
-              flow, then open the report for deeper methodology and result details.
+              To solve that, my team built a single-turn RAG pipeline that retrieves candidates, reranks
+              aggressively, and assembles minimal but information-dense context for final generation.
             </p>
           </div>
         </article>
       </section>
 
+      <section id="approach" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Approach</p>
+          <h2>Context engineering decisions that improved grounding</h2>
+        </div>
+        <div class="project-grid case-grid">
+          <article class="card">
+            <p class="tag">Pipeline</p>
+            <ul class="key-points">
+              <li>Custom line-aware token chunker to preserve citation traceability.</li>
+              <li>Embedding-based retrieval with FAISS (k=25) for broad candidate recall.</li>
+              <li>Cross-encoder reranking with bge-reranker-large and top_n=1 selection.</li>
+              <li>Final prompt assembly constrained to a strict 2,000-token budget.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <p class="tag">Tech Stack</p>
+            <div class="stack-pill-list" aria-label="RAG stack technologies">
+              <span>RapidFire AI</span>
+              <span>LangChain</span>
+              <span>FAISS</span>
+              <span>BAAI/bge-large-en-v1.5</span>
+              <span>BAAI/bge-reranker-large</span>
+              <span>Python</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="architecture" class="section reveal">
         <div class="section-header">
           <p class="eyebrow">Architecture</p>
-          <h2>RAG Pipeline Diagram</h2>
+          <h2>Request-to-answer RAG flow</h2>
         </div>
         <figure class="card architecture-figure">
           <img
@@ -85,12 +111,54 @@
         </figure>
       </section>
 
+      <section id="evaluation" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Evaluation</p>
+          <h2>How we assessed answer quality</h2>
+        </div>
+        <article class="card case-study">
+          <div class="story-flow">
+            <p>
+              We evaluated the system on documentation-style questions that required precise grounding,
+              then compared output behavior across retrieval and reranking configurations.
+            </p>
+            <p>
+              The primary signal was answer reliability under budget pressure: did the model cite the right
+              sections, avoid unsupported claims, and remain consistent across paraphrased prompts?
+            </p>
+            <p>
+              The strongest improvement came from tighter reranking and cleaner context assembly, which
+              reduced distractor text and improved factual alignment in final responses.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="takeaways" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Takeaways</p>
+          <h2>What this project changed in my AI workflow</h2>
+        </div>
+        <article class="card case-study">
+          <ul class="key-points">
+            <li>RAG quality depends more on context curation than on model size alone.</li>
+            <li>Line-aware chunking and citations improve trust and debuggability.</li>
+            <li>Retrieval recall without reranking can hurt downstream answer quality.</li>
+            <li>Small prompt-budget constraints force better system design decisions.</li>
+          </ul>
+        </article>
+      </section>
+
       <section id="report" class="section reveal">
         <article class="card case-study">
-          <p>For complete experimental setup, config tables, and analysis, use the full project report.</p>
-          <a class="button pdf-button" href="../assets/docs/report-rag.pdf" target="_blank" rel="noopener noreferrer"
-            >Open RAG Project PDF</a
-          >
+          <p class="tag">Resources</p>
+          <h2>Report and implementation details</h2>
+          <p>For complete methodology, configuration tables, and analysis, open the full project report.</p>
+          <div class="hero-actions">
+            <a class="button pdf-button" href="../assets/docs/report-rag.pdf" target="_blank" rel="noopener noreferrer"
+              >Open RAG Project PDF</a
+            >
+          </div>
         </article>
       </section>
     </main>

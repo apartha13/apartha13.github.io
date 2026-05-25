@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ajay Partha | Decoding Travel Purposes</title>
+    <title>Ajay Partha | AI Trip Purpose Prediction</title>
     <meta
       name="description"
-      content="Project case study for decoding travel purposes through sequential probabilistic models by Ajay Partha."
+      content="AI-focused case study on trip purpose prediction using sequential probabilistic models and temporal context features."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,98 +23,114 @@
     <header class="site-header">
       <a class="logo" href="../index.html">ajaypartha</a>
       <nav class="main-nav" aria-label="Project page navigation">
-        <a href="about.html">About</a>
         <a href="../index.html#projects">All Projects</a>
         <a href="#problem">Problem</a>
-        <a href="#solution">Solution</a>
-        <a href="#demo">Demo</a>
+        <a href="#approach">AI Approach</a>
+        <a href="#results">Results</a>
+        <a href="#resources">Resources</a>
       </nav>
-      <a class="button ghost" href="../index.html#projects">Back to Projects</a>
+      <a class="button ghost" href="../index.html">Back to Home</a>
     </header>
 
     <main>
       <section class="hero reveal">
-        <p class="eyebrow">Project 4</p>
-        <h1>Decoding Travel Purposes Through Sequential Probabilistic Models</h1>
+        <p class="eyebrow">Case Study</p>
+        <h1>AI Trip Purpose Prediction</h1>
         <p class="lead">
-          A collaborative mobility research project that followed a simple question: if a traveler’s
-          route and time of day are visible, can we infer what they are likely doing next?
+          An AI project focused on inferring hidden travel intent from sequential trip behavior using
+          probabilistic sequence models and context-aware feature engineering.
         </p>
       </section>
 
       <section id="problem" class="section reveal">
         <div class="section-header">
-          <p class="eyebrow">Story</p>
-          <h2>From noisy trips to latent intent</h2>
+          <p class="eyebrow">Problem</p>
+          <h2>Predicting intent when labels are not available at runtime</h2>
         </div>
         <article class="card case-study">
           <div class="story-flow">
             <p>
-              We started with a mobility dataset full of trip modes, timestamps, and purpose labels, and
-              quickly ran into the core challenge: the thing we cared about most was never available at
-              inference time.
+              The core challenge in mobility intelligence is that purpose labels (work, home, shopping,
+              social, etc.) are usually available only in curated datasets, not in real-time systems.
             </p>
             <p>
-              That made the project less about memorizing labels and more about reading patterns across a
-              day, where one trip’s mode and timing could hint at the next hidden purpose.
+              This project asks whether hidden intent can be inferred from what is observable: trip mode,
+              ordering, and time context across a day.
             </p>
             <p>
-              Hidden Markov Models became the natural lens for that story: purposes were the hidden
-              states, and travel modes were the clues.
+              Instead of treating each trip independently, we model intent as a sequence problem where
+              adjacent trips provide useful context for decoding the next latent state.
             </p>
           </div>
         </article>
       </section>
 
-      <section id="solution" class="section reveal">
+      <section id="approach" class="section reveal">
         <div class="section-header">
-          <p class="eyebrow">Model + Architecture</p>
-          <h2>We used sequential models, then made the observations richer</h2>
+          <p class="eyebrow">AI Approach</p>
+          <h2>Sequential probabilistic modeling with richer observation signals</h2>
         </div>
         <article class="card case-study">
           <div class="story-flow">
             <p>
-              First we trained first-order, 3-gram, and edge-emitting HMMs with maximum likelihood
-              estimation on fully observed training data, then used Viterbi to decode held-out days.
+              We trained multiple sequence baselines including first-order HMM, 3-gram HMM, and
+              edge-emitting HMM, then used Viterbi decoding to infer purpose trajectories on held-out days.
             </p>
             <p>
-              The turning point came when raw trip modes were no longer the only signal. Once we encoded
-              time of day and later hour of day, the observations became much more informative and the
-              models had a clearer path to follow.
+              The key modeling decision was feature enrichment at the observation layer: trip mode was
+              combined with time-of-day and hour-of-day buckets to improve state separability.
             </p>
             <p>
-              We compared those models against home-only, time-of-day, frequency, and random forest
-              baselines so we could see whether the sequential structure was actually doing useful work.
+              This converts a weak signal into a more informative emission space, allowing the models to
+              better distinguish transitions that look similar in mode alone but differ by temporal context.
             </p>
             <p>
-              The pipeline began with GPS traces from Geolife, grouped them by trip, sorted them into
-              daily sequences, and filtered out short or low-quality records before training.
+              Pipeline steps: GPS trajectories from Geolife were cleaned, grouped by trip, sorted into daily
+              sequences, and filtered for sequence quality before probability estimation.
             </p>
             <p>
-              From there, we estimated initial, transition, and emission probabilities directly from
-              counts, which kept the HMM training transparent and easy to inspect.
+              Initial, transition, and emission distributions were estimated from counts for transparent,
+              interpretable model behavior.
             </p>
             <p>
-              The architecture also included a higher-order 3-gram version and an edge-emitting variant,
-              letting us test whether more expressive temporal assumptions improved decoding.
+              For benchmarking, we compared against non-sequential baselines (home-only, frequency,
+              time-of-day heuristic) and a random forest classifier.
             </p>
             <p>
-              In the end, the strongest result came from adding time-based context, which gave the models
-              enough signal to track latent purpose more reliably.
+              This comparison isolated the value of sequence structure and showed when temporal dependence
+              contributes beyond static classification.
             </p>
           </div>
         </article>
       </section>
 
-      <section id="report" class="section reveal">
+      <section id="results" class="section reveal">
         <div class="section-header">
-          <p class="eyebrow">Report</p>
-          <h2>Report</h2>
+          <p class="eyebrow">Results</p>
+          <h2>What improved model performance most</h2>
         </div>
         <article class="card case-study">
-          <div class="story-flow">
+          <ul class="key-points">
+            <li>Temporal context features (especially hour-of-day) materially improved decoding quality.</li>
+            <li>Sequence-aware models outperformed simple heuristics on latent-purpose inference tasks.</li>
+            <li>Higher-order and edge-emitting variants helped test richer transition assumptions.</li>
+            <li>Interpretable probabilistic parameters made error analysis and debugging straightforward.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="resources" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Resources</p>
+          <h2>Code repository and full report</h2>
+        </div>
+        <article class="card case-study">
+          <div class="hero-actions">
+            <a class="button github-button" href="https://github.com/Ydz0616/Trip-Purpose-Prediction" target="_blank" rel="noopener noreferrer"
+              >Open GitHub Repository</a
+            >
             <a class="button pdf-button" href="../assets/docs/report-travel-purpose.pdf" target="_blank" rel="noopener noreferrer"
-              >Open Travel Project PDF</a
+              >Open Project PDF</a
             >
           </div>
         </article>
