@@ -330,6 +330,106 @@ h2 {
   margin-bottom: 0;
 }
 
+.about-story-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 2.1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.about-story-rail {
+  position: sticky;
+  top: 92px;
+  border: 1px solid rgba(0, 85, 139, 0.16);
+  border-radius: 22px;
+  padding: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(233, 242, 249, 0.78)),
+    radial-gradient(circle at 85% 5%, rgba(0, 85, 139, 0.09), transparent 35%);
+  box-shadow: 0 18px 44px rgba(12, 26, 43, 0.1);
+}
+
+.about-rail-label {
+  margin: 0.2rem 0 0.65rem;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.about-rail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about-rail-chips span {
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 85, 139, 0.2);
+  background: rgba(255, 255, 255, 0.86);
+  color: #0b3352;
+  padding: 0.28rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.about-pull-quote {
+  margin: 1rem 0 0;
+  padding: 0.8rem 0.85rem;
+  border-left: 3px solid rgba(0, 85, 139, 0.45);
+  border-radius: 10px;
+  background: rgba(0, 85, 139, 0.08);
+  color: #0f2740;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.about-story-content {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.about-story-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(0, 85, 139, 0.52), rgba(26, 122, 140, 0.22), rgba(201, 154, 45, 0.4));
+}
+
+.about-story-block {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 1rem 1rem 0.95rem;
+  margin-bottom: 0.9rem;
+}
+
+.about-story-block::before {
+  content: "";
+  position: absolute;
+  left: -1.37rem;
+  top: 1.05rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 85, 139, 0.58);
+  background: #f2f7fb;
+}
+
+.about-story-block p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.74;
+}
+
 .key-points {
   margin: 0.8rem 0 0;
   padding-left: 1.2rem;
@@ -407,6 +507,82 @@ h2 {
   padding: 0.6rem 0.7rem 0.7rem;
   color: var(--ink-soft);
   font-size: 0.92rem;
+}
+
+.about-idea-grid {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.idea-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.9), rgba(228, 239, 248, 0.74)),
+    radial-gradient(circle at 88% 8%, rgba(0, 85, 139, 0.11), transparent 35%);
+  padding: 1rem;
+  box-shadow: 0 16px 40px rgba(12, 26, 43, 0.1);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.idea-card:nth-child(odd) {
+  transform: rotate(-0.8deg);
+}
+
+.idea-card:nth-child(even) {
+  transform: rotate(0.8deg);
+}
+
+.idea-card:hover {
+  transform: translateY(-5px) rotate(0deg);
+  border-color: rgba(0, 85, 139, 0.24);
+  box-shadow: 0 22px 54px rgba(12, 26, 43, 0.16);
+}
+
+.idea-card h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1.15rem;
+}
+
+.idea-card p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.idea-visual {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  margin: 0.65rem 0 0.75rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 85, 139, 0.12);
+  box-shadow: 0 10px 28px rgba(12, 26, 43, 0.16);
+}
+
+.idea-card .tag {
+  background: rgba(0, 85, 139, 0.15);
+}
+
+.about-accent-band {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about-accent-band span {
+  border: 1px solid rgba(0, 85, 139, 0.18);
+  background: rgba(0, 85, 139, 0.06);
+  color: #0b3352;
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .award-spotlight {
@@ -533,6 +709,26 @@ h2 {
 
   .hero {
     padding-top: 2.4rem;
+  }
+
+  .about-story-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story-rail {
+    position: static;
+  }
+
+  .about-story-content {
+    padding-left: 0;
+  }
+
+  .about-story-content::before {
+    display: none;
+  }
+
+  .about-story-block::before {
+    display: none;
   }
 
   .award-grid {
