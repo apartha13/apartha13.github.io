@@ -536,6 +536,36 @@ h2 {
   font-size: 0.92rem;
 }
 
+.atp-screenshot-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.atp-screenshot-card {
+  border-radius: 16px;
+}
+
+.atp-screenshot-card a {
+  display: block;
+  padding: 0.45rem;
+  background: linear-gradient(180deg, rgba(12, 26, 43, 0.08), rgba(12, 26, 43, 0.02));
+}
+
+.atp-screenshot-card img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid rgba(12, 26, 43, 0.14);
+  background: #ffffff;
+}
+
+.atp-screenshot-card figcaption {
+  font-weight: 600;
+}
+
 .about-idea-grid {
   margin-top: 0.6rem;
   display: grid;
@@ -774,6 +804,10 @@ h2 {
   .prototype-gallery {
     grid-template-columns: 1fr;
     width: min(420px, 100%);
+  }
+
+  .atp-screenshot-gallery {
+    grid-template-columns: 1fr;
   }
 
   .award-photo {
