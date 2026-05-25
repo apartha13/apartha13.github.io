@@ -244,6 +244,23 @@ h2 {
   text-underline-offset: 0.18em;
 }
 
+.latest-project {
+  border-color: rgba(0, 85, 139, 0.28);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.96), rgba(227, 242, 252, 0.84));
+  box-shadow: 0 24px 56px rgba(0, 85, 139, 0.2);
+}
+
+.latest-project::before {
+  height: 6px;
+  background: linear-gradient(90deg, #00558b, #1a7a8c, #c99a2d);
+}
+
+.latest-badge {
+  margin-left: 0.35rem;
+  background: rgba(201, 154, 45, 0.2);
+  color: #7b5f13;
+}
+
 .tag {
   display: inline-block;
   background: rgba(0, 85, 139, 0.1);
