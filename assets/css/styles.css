@@ -172,7 +172,34 @@ main,
 
 .hero {
   padding: 6.5rem 0 3.6rem;
-  max-width: 840px;
+  max-width: 980px;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.8fr);
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-portrait {
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 85, 139, 0.16);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 20px 44px rgba(12, 26, 43, 0.18);
+}
+
+.hero-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
 }
 
 .eyebrow {
@@ -709,6 +736,15 @@ h2 {
 
   .hero {
     padding-top: 2.4rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-portrait {
+    max-width: 320px;
   }
 
   .about-story-layout {
