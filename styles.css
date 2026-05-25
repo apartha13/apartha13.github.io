@@ -150,6 +150,26 @@ main,
   background: rgba(255, 255, 255, 0.62);
 }
 
+.button.github-button {
+  background: #111827;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.22);
+}
+
+.button.github-button:hover,
+.button.github-button:focus-visible {
+  background: #020617;
+}
+
+.button.pdf-button {
+  background: #8b1e2d;
+  box-shadow: 0 12px 28px rgba(139, 30, 45, 0.24);
+}
+
+.button.pdf-button:hover,
+.button.pdf-button:focus-visible {
+  background: #6f1824;
+}
+
 .hero {
   padding: 6.5rem 0 3.6rem;
   max-width: 840px;
@@ -242,6 +262,11 @@ h2 {
   font-weight: 700;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.18em;
+}
+
+.card a.button {
+  color: #f8f7f2;
+  text-decoration: none;
 }
 
 .latest-project {
@@ -337,6 +362,51 @@ h2 {
   margin-top: 0.7rem;
   color: var(--ink-soft);
   font-size: 0.94rem;
+}
+
+.stack-pill-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.stack-pill-list span {
+  border: 1px solid rgba(0, 85, 139, 0.18);
+  background: rgba(0, 85, 139, 0.06);
+  color: #0b3352;
+  border-radius: 999px;
+  padding: 0.4rem 0.78rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.screenshot-gallery {
+  margin-top: 0.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.screenshot-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.screenshot-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.screenshot-card figcaption {
+  padding: 0.6rem 0.7rem 0.7rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
 }
 
 .award-spotlight {

@@ -26,6 +26,8 @@
         <a href="index.html#projects">All Projects</a>
         <a href="#story">Story</a>
         <a href="#architecture">Architecture</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#screenshots">Screenshots</a>
         <a href="#demo">Demo</a>
       </nav>
       <a class="button ghost" href="index.html#projects">Back to Projects</a>
@@ -59,7 +61,7 @@
             </p>
             <p>
               The result is a complete product loop I built end to end, from data ingestion and modeling
-              to runtime APIs, frontend flows, and deployment for real-world use.
+              to runtime APIs, frontend flows, and deployment on Google Cloud for real-world use.
             </p>
           </div>
         </article>
@@ -85,9 +87,69 @@
               keep inference fast while preserving a reproducible training flow.
             </p>
             <p>
-              The system is deployed as a live web app with authenticated league workflows, so people can
-              make picks, track outcomes, and stay engaged with the ATP season together.
+              The system is deployed on Google Cloud as a live web app with authenticated league workflows,
+              so people can make picks, track outcomes, and stay engaged with the ATP season together.
             </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="stack" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Tech Stack</p>
+          <h2>The full system, layer by layer</h2>
+        </div>
+        <article class="card case-study">
+          <figure class="architecture-figure">
+            <img
+              src="assets/atp-stack-diagram.svg"
+              alt="Stack diagram showing frontend, backend, data, machine learning, deployment, and operations layers for the ATP app"
+            />
+            <figcaption>
+              End-to-end stack across interface, APIs, modeling pipeline, and production deployment.
+            </figcaption>
+          </figure>
+          <div class="stack-pill-list" aria-label="ATP stack technologies">
+            <span>FastAPI</span>
+            <span>PostgreSQL / Supabase</span>
+            <span>SQLAlchemy</span>
+            <span>XGBoost</span>
+            <span>scikit-learn + pandas + numpy</span>
+            <span>Jinja2 + JavaScript</span>
+            <span>Uvicorn / Gunicorn</span>
+            <span>Google Cloud Compute Engine</span>
+            <span>Nginx + systemd</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="screenshots" class="section reveal">
+        <div class="section-header">
+          <p class="eyebrow">Screenshots</p>
+          <h2>Product views from the live app</h2>
+        </div>
+        <article class="card case-study">
+          <div class="screenshot-gallery">
+            <figure class="screenshot-card">
+              <img src="assets/atp/atp-screen-1.png" alt="ATP app interface screenshot one" />
+              <figcaption>Prediction dashboard</figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <img src="assets/atp/atp-screen-2.png" alt="ATP app interface screenshot two" />
+              <figcaption>Tournament odds view</figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <img src="assets/atp/atp-screen-3.png" alt="ATP app interface screenshot three" />
+              <figcaption>Head-to-head prediction flow</figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <img src="assets/atp/atp-screen-4.png" alt="ATP app interface screenshot four" />
+              <figcaption>Draw simulation controls</figcaption>
+            </figure>
+            <figure class="screenshot-card">
+              <img src="assets/atp/atp-screen-5.png" alt="ATP app interface screenshot five" />
+              <figcaption>League workflow and picks</figcaption>
+            </figure>
           </div>
         </article>
       </section>
@@ -104,8 +166,8 @@
               documentation.
             </p>
             <div class="hero-actions">
-              <a class="button" href="https://github.com/apartha13/atpTennisPredictions" target="_blank" rel="noopener noreferrer"
-                >View GitHub Repository</a
+              <a class="button github-button" href="https://github.com/apartha13/atpTennisPredictions" target="_blank" rel="noopener noreferrer"
+                >Open GitHub Repository</a
               >
             </div>
           </div>
