@@ -291,6 +291,11 @@ h2 {
   text-underline-offset: 0.18em;
 }
 
+.project-grid .card > a {
+  display: block;
+  margin-top: 0.25rem;
+}
+
 .card a.button {
   color: #f8f7f2;
   text-decoration: none;
@@ -311,6 +316,38 @@ h2 {
   margin-left: 0.35rem;
   background: rgba(201, 154, 45, 0.2);
   color: #7b5f13;
+}
+
+.card-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-tag-row .tag {
+  margin-bottom: 0;
+}
+
+.topic-tag {
+  background: rgba(26, 122, 140, 0.16);
+  color: #0f5f6d;
+}
+
+.project-date {
+  margin: 0 0 0.68rem;
+  color: #0f3550;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+}
+
+.hero .project-date {
+  margin: 0.2rem 0 0.55rem;
+}
+
+.project-topic-tag {
+  margin-top: 0.1rem;
 }
 
 .tag {
@@ -670,6 +707,52 @@ h2 {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.about-skills-grid {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.about-skill-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(170deg, rgba(255, 255, 255, 0.92), rgba(228, 239, 248, 0.74)),
+    radial-gradient(circle at 86% 10%, rgba(0, 85, 139, 0.1), transparent 36%);
+  padding: 1rem;
+  box-shadow: 0 16px 40px rgba(12, 26, 43, 0.08);
+}
+
+.about-skill-card .tag {
+  margin-bottom: 0.7rem;
+}
+
+.about-skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-pill {
+  border: 1px solid rgba(0, 85, 139, 0.2);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(217, 234, 245, 0.85));
+  color: #0b3352;
+  border-radius: 999px;
+  padding: 0.32rem 0.68rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 5px 12px rgba(12, 26, 43, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 85, 139, 0.34);
+  box-shadow: 0 9px 18px rgba(12, 26, 43, 0.14);
 }
 
 .award-spotlight {
